@@ -1,2 +1,2 @@
-# Movie
-Application to see the last updates about movies
+# Multiverse
+Application to see the last updates about multiverses
