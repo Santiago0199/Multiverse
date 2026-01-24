@@ -32,5 +32,13 @@ gradlePlugin {
             id = "multiverse.compose"
             implementationClass = "com.multiverse.plugin.convention.ComposeConventionPlugin"
         }
+        create("multiverseKsp") {
+            id = "multiverse.ksp"
+            implementationClass = "com.multiverse.plugin.convention.KspConventionPlugin"
+        }
+        create("multiverseHilt") {
+            id = "multiverse.hilt"
+            implementationClass = "com.multiverse.plugin.convention.HiltConventionPlugin"
+        }
     }
 }

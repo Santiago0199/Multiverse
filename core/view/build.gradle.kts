@@ -1,5 +1,6 @@
 plugins {
     id("multiverse.android.library")
+    id("multiverse.compose")
 }
 
 android {
@@ -8,5 +9,6 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.activity.compose)
+    implementation(libs.activity.compose)
+    implementation(libs.navigation.compose)
 }

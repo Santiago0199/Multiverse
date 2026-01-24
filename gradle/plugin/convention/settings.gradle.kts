@@ -9,7 +9,7 @@ dependencyResolutionManagement {
 
     versionCatalogs {
         create("multiverseLibs") {
-            from(files("../../gradle/libs.versions.toml"))
+            from(files("../../libs.versions.toml"))
         }
     }
 }

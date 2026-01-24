@@ -1,4 +1,4 @@
-package com.multiverse.movie.impl
+package com.multiverse.movie.impl.ui
 
 import android.os.Bundle
 import androidx.activity.compose.setContent
@@ -10,8 +10,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.rememberNavController
 import com.multiverse.core.view.activity.ComposeBaseActivity
+import com.multiverse.core.view.navigation.composable
 import com.multiverse.design.system.core.MultiverseTheme
+import com.multiverse.movie.impl.ui.detail.navigation.MovieDetailRoute
+import com.multiverse.movie.impl.ui.home.navigation.MovieRoute
 
 class MovieHomeActivity: ComposeBaseActivity() {
 
@@ -20,11 +25,25 @@ class MovieHomeActivity: ComposeBaseActivity() {
         enableEdgeToEdge()
         setContent {
             MultiverseTheme {
+                val navController = rememberNavController()
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    NavHost(
+                        navController = navController,
+                        startDestination = MovieRoute.route
+                    ) {
+                        composable(MovieRoute) {
+                            Greeting(
+                                name = "Android",
+                                modifier = Modifier.padding(innerPadding)
+                            )
+                        }
+                        composable(MovieDetailRoute) {
+                            Greeting(
+                                name = "Android",
+                                modifier = Modifier.padding(innerPadding)
+                            )
+                        }
+                    }
                 }
             }
         }

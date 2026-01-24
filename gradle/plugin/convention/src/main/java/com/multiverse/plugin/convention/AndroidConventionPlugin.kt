@@ -13,8 +13,8 @@ class AndroidConventionPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
         with(target) {
-            pluginManager.apply(target.libs.plugin("android.library").pluginId)
-            pluginManager.apply(target.libs.plugin("kotlin.android").pluginId)
+            pluginManager.apply(libs.plugin("android.library").pluginId)
+            pluginManager.apply(libs.plugin("kotlin.android").pluginId)
 
             extensions.configure<LibraryExtension> {
                 setKotlinAndroid(this)

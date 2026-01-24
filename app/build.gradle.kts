@@ -1,5 +1,7 @@
 plugins {
     id("multiverse.app")
+    id("multiverse.ksp")
+    id("multiverse.hilt")
 }
 
 android {
